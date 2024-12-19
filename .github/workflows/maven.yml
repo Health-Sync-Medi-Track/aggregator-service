@@ -68,4 +68,11 @@ jobs:
           kubectl apply -n $NAMESPACE -f deployment.yaml
           kubectl rollout restart -n $NAMESPACE deployment "$DEPLOYMENT_NAME"
 
+      # deployment tests and verification
+      - name: Deployment Tests and Verification
+        run: |
+          echo "Running Health check Tests..."
+          curl --fail http://34.110.168.229/api/patient-record-service/actuator/health || exit 1
 
+          echo "Verifying Deployment..."
+          kubectl get services -n $NAMESPACE -o wide

@@ -13,6 +13,6 @@ aggregator:
     base-url: http://34.110.168.229/api/v1
     endpoints:
       appointment-service: /appointment-service/appointments/all
-      patient-service: /patient-service/patients
+      patient-service: /patient-record-service/patient-records
   cron:
     schedule: "0 0 0 * * ?"

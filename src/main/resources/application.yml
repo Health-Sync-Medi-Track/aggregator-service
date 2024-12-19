@@ -1,0 +1,18 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api/v1/aggregator-service
+spring:
+  datasource:
+    url: jdbc:redshift://default-workgroup.034362066993.us-east-1.redshift-serverless.amazonaws.com:5439/healthsync
+    username: admin
+    password: 'IFHOMiwjuj894$.'
+
+aggregator:
+  services:
+    base-url: http://34.110.168.229/api/v1
+    endpoints:
+      appointment-service: /appointment-service/appointments/all
+      patient-service: /patient-service/patients
+  cron:
+    schedule: "0 0 0 * * ?"

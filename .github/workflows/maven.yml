@@ -72,7 +72,7 @@ jobs:
       - name: Deployment Tests and Verification
         run: |
           echo "Running Health check Tests..."
-          curl --fail http://35.110.168.229/api/v1/aggregator-service/actuator/health || exit 1
+          curl --fail http://34.110.168.229/api/v1/aggregator-service/actuator/health || exit 1
 
           echo "Verifying Deployment..."
           kubectl get services -n $NAMESPACE -o wide
